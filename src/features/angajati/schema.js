@@ -13,9 +13,9 @@ const angajatDefs = gql`
     serie: String!
     no: String!
     nrTelefon: String
-    #poza: Byte[]
+    poza: [Byte]
     esteAdmin: Boolean
-    # Manager: Angajat
+    Manager: Angajat
     departament: Departament
     functie: Functie
     concediat: Boolean
