@@ -1,7 +1,7 @@
 const concediiApi = require('../features/common/concediileMele/dataSources/concediiApi')
 const UserApi = require('../features/user/dataSources/userApi')
 const UserDb = require('../features/user/dataSources/userDb')
-const AngajatApi = require('../features/angajati/dataSources/angajatiAPI')
+const AngajatApi = require('../features/angajati/dataSources/angajatAPI')
 
 module.exports.getDataSources = () => ({
   // Instantiate your data sources here. e.g.: userApi: new UserApi()
