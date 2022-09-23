@@ -2,8 +2,8 @@ const { topics, pubSub } = require('../../pubSub')
 
 const angajatResolver = {
   Query: {
-    angajat: async (_, { id }, { dataSources }, _info) => {
-      const data = await dataSources.angajatAPI.angajat(id) //.taskAPi.getProcessDefinitions()
+    angajat: async (_, { id }, { dataSources }) => {
+      const data = await dataSources.angajatAPI.getAngajat(id)
       return data
     }
   }
