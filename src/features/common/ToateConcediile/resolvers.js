@@ -2,8 +2,8 @@ const { topics, pubSub } = require('../../../pubSub')
 
 const ToateConResolvers = {
   Query: {
-    ToateConData: async (_, { dataSources }, _info) => {
-      const data = await dataSources.ToateConAPI.ToateConData()
+    ToateConcediileDATA: async (_, { dataSources }, _info) => {
+      const data = await dataSources.ToateConAPI.ToateConcediileDATA()
       return data
     }
   }

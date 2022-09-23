@@ -8,10 +8,9 @@ const ToateConcediileDefs = gql`
     stareConcediu: String
     tipConcediuNume: String
     inlocuitorNume: String
-
-
+  }
   extend type Query {
-    concediiData(): ToateConcediile!
+    ToateConcediileDATA: ToateConcediile!
   }
 `
 module.exports = ToateConcediileDefs

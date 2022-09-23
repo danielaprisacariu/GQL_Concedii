@@ -5,7 +5,15 @@ class ToateConAPI extends ApiRESTDataSource {
     super()
   }
   async ToateConcediileDATA() {
-    const ToateConData = { nume: ' ', dataInceput: ' ', dataSfarsit: ' ', inlocuitor: ' ', stareCon: '' }
+    const ToateConData = {
+      id: 1,
+      angajatNume: ' ',
+      tipConcediuNume: ' ',
+      dataInceput: ' ',
+      dataSfarsit: ' ',
+      stareConcediu: ' ',
+      inlocuitorNume: ' '
+    }
     return ToateConData
   }
 }
