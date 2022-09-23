@@ -2,7 +2,6 @@ const concediiApi = require('../features/common/concediileMele/dataSources/conce
 const ToateConAPI = require('../features/common/ToateConcediile/dataSources/ToateConAPI')
 const UserApi = require('../features/user/dataSources/userApi')
 const UserDb = require('../features/user/dataSources/userDb')
-
 const AngajatApi = require('../features/angajati/dataSources/angajatiAPI')
 
 module.exports.getDataSources = () => ({
@@ -11,7 +10,7 @@ module.exports.getDataSources = () => ({
   userDb: new UserDb(),
   concediiApi: new concediiApi(),
   ToateConAPI: new ToateConAPI(),
-  AngajatApi: new AngajatApi()
+  angajatApi: new AngajatApi()
 })
 module.exports.initializeDataSources = (context, dbInstance, dataSources) => {
   dataSources.concediiApi.initialize = { context }
@@ -26,6 +25,6 @@ module.exports.initializedDataSources = (context, dbInstance, dataSources) => {
   dataSources.userDb.initialize({ context: { dbInstance } })
   dataSources.concediiApi.initialize = { context }
   dataSources.ToateConAPI.initialize = { context }
-  dataSources.AngajatApi.initialize({ context })
+  dataSources.angajatApi.initialize({ context })
   return dataSources
 }

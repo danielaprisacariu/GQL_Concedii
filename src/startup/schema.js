@@ -21,7 +21,6 @@ const sources = loadTypedefsSync(join(__dirname, '../**/*.graphql'), {
 })
 
 const resolvers = merge(concediiResolvers, ToateConResolvers, userResolvers, angajatResolvers)
-//const resolvers = merge(angajatResolvers)
 
 const typeDefs = [
   ...sources.map(source => source.document),
