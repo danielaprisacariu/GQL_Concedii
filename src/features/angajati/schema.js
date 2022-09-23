@@ -32,7 +32,7 @@ const angajatDefs = gql`
   }
 
   extend type Query {
-    angajat{id: Int}: Angajat!
+    angajat(id: Int): Angajat!
   }
 `
 
