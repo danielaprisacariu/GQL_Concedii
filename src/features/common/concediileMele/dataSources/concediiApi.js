@@ -5,8 +5,8 @@ class concediiApi extends ApiRESTDataSource {
     super()
   }
   async concediiData(id) {
-    const ConcediiData = { id: 1, dataInceput: ' ', dataSfarsit: ' ' }
-    return ConcediiData
+    const data = this.get('concediu$(id)')
+    return data
   }
 }
 module.exports = concediiApi
