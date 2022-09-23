@@ -6,29 +6,32 @@ class AngajatApi extends ApiRESTDataSource {
   }
 
   async getAngajat(id) {
-    const data = {
-      id: 1,
-      nume: 'Mitrut',
-      prenume: 'Elena',
-      email: 'elena.mitrut@totalsoft.ro',
-      parola: 'mitrutElena1',
-      dataAngajare: new Date(),
-      dataNasterii: new Date(),
-      cnp: '2678909876543',
-      serie: 'DP',
-      no: '123456',
-      nrTelefon: '0745678909876',
-      //   poza: null,
-      esteAdmin: false,
-      //   manager: null,
-      departament: null,
-      functie: null,
-      concediat: false
-    }
+    const data = await this.get(`Angajat/GetAngajatById?id=${id}`)
+
     return data
   }
 
-  //this.get(`/Angajat/GetAngajatById/${id}`)
+  //
 }
 
 module.exports = AngajatApi
+
+// {
+//   id: 1,
+//   nume: 'Mitrut',
+//   prenume: 'Elena',
+//   email: 'elena.mitrut@totalsoft.ro',
+//   parola: 'mitrutElena1',
+//   dataAngajare: new Date(),
+//   dataNasterii: new Date(),
+//   cnp: '2678909876543',
+//   serie: 'DP',
+//   no: '123456',
+//   nrTelefon: '0745678909876',
+//   //   poza: null,
+//   esteAdmin: false,
+//   //   manager: null,
+//   departament: null,
+//   functie: null,
+//   concediat: false
+// }
