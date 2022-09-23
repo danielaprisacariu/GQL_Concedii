@@ -25,7 +25,7 @@ const resolvers = merge(concediiResolvers, ToateConResolvers, userResolvers, ang
 const typeDefs = [
   ...sources.map(source => source.document),
   ...oldTypeDefs,
-  ToateConResolvers,
+  ToateConcediileDefs,
   userDefs,
   angajatDefs,
   concediiDefs

@@ -1,6 +1,6 @@
 const ApiRESTDataSource = require('../../../utils/apiRESTDataSource')
 
-class angajatAPI extends ApiRESTDataSource {
+class AngajatApi extends ApiRESTDataSource {
   constructor() {
     super()
   }
@@ -31,4 +31,4 @@ class angajatAPI extends ApiRESTDataSource {
   //this.get(`/Angajat/GetAngajatById/${id}`)
 }
 
-module.exports = angajatAPI
+module.exports = AngajatApi
