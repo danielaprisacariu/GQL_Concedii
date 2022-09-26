@@ -6,7 +6,7 @@ const angajatDefs = gql`
     nume: String!
     prenume: String!
     email: String!
-    parola: String!
+    parola: String
     dataAngajare: DateTime!
     dataNasterii: DateTime!
     cnp: String!
@@ -15,7 +15,6 @@ const angajatDefs = gql`
     nrTelefon: String
     poza: [Byte]
     esteAdmin: Boolean
-    Manager: Angajat
     departament: Departament
     functie: Functie
     concediat: Boolean

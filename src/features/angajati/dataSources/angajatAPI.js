@@ -10,8 +10,6 @@ class AngajatApi extends ApiRESTDataSource {
 
     return data
   }
-
-  //
 }
 
 module.exports = AngajatApi

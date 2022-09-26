@@ -5,8 +5,9 @@ class concediiApi extends ApiRESTDataSource {
     super()
   }
   async concediiData(id) {
-    const ConcediiData = { id: 1, dataInceput: ' ', dataSfarsit: ' ' }
-    return ConcediiData
+    const data = await this.get(`Concediu/GetAllIstoricConcedii?angajatId=${id}`)
+    //smsmsmsm
+    return data
   }
 }
 module.exports = concediiApi

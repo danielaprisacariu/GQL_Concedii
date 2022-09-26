@@ -10,7 +10,7 @@ const ToateConcediileDefs = gql`
     inlocuitorNume: String
   }
   extend type Query {
-    ToateConData: ToateConcediile!
+    ToateConcediileDATA: ToateConcediile!
   }
 `
 module.exports = ToateConcediileDefs
