@@ -4,16 +4,8 @@ class ToateConAPI extends ApiRESTDataSource {
   constructor() {
     super()
   }
-  async ToateConcediileDATA() {
-    const ToateConData = {
-      id: 1,
-      angajatNume: ' ',
-      tipConcediuNume: ' ',
-      dataInceput: ' ',
-      dataSfarsit: ' ',
-      stareConcediu: ' ',
-      inlocuitorNume: ' '
-    }
+  async toateConcediileDATA() {
+    const ToateConData = this.get('Concediu/GetAllConcediuAngajati')
     return ToateConData
   }
 }
