@@ -12,7 +12,7 @@ class AngajatApi extends ApiRESTDataSource {
   }
 
   async getAllAngajat() {
-    const data = await this.get(`Orice/GetAngajatiFiltrat`)
+    const data = await this.get(`Angajat/GetAllAngajati`)
 
     return data
   }

@@ -12,12 +12,6 @@ module.exports.getDataSources = () => ({
   ToateConAPI: new ToateConAPI(),
   angajatApi: new AngajatApi()
 })
-// module.exports.initializeDataSources = (context, dbInstance, dataSources) => {
-//   dataSources.concediiApi.initialize = { context }
-//   dataSources.ToateConAPI.initialize = { context }
-//   dataSources.userDb.initialize = { context: { dbInstance } }
-//   return dataSources
-// }
 
 module.exports.initializedDataSources = (context, dbInstance, dataSources) => {
   // You need to initialize you datasources here e.g.: dataSources.userApi.initialize({ context })
