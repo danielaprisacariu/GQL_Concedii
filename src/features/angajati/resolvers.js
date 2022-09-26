@@ -6,8 +6,12 @@ const angajatResolver = {
       const data = await dataSources.angajatApi.getAngajat(id)
       return data
     }
+  },
+  Mutation: {
+    newAngajat: async (_, { input }, { dataSources }) => {
+      return dataSources.angajatApi.newAngajat(input)
+    }
   }
-  //Mutation: {newAngajat}
 }
 
 module.exports = angajatResolver
