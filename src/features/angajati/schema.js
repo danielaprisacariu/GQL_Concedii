@@ -21,6 +21,26 @@ const angajatDefs = gql`
     concediat: Boolean
   }
 
+  input NewAngajat {
+    id: Int!
+    nume: String!
+    prenume: String!
+    email: String!
+    parola: String!
+    dataAngajare: DateTime!
+    dataNasterii: DateTime!
+    cnp: String!
+    serie: String!
+    no: String!
+    nrTelefon: String
+    poza: [Byte]
+    esteAdmin: Boolean
+    Manager: Angajat
+    departament: Departament
+    functie: Functie
+    concediat: Boolean
+  }
+
   type Departament {
     id: Int!
     denumire: String
@@ -33,6 +53,10 @@ const angajatDefs = gql`
 
   extend type Query {
     angajat(id: Int): Angajat!
+  }
+
+  extend type Mutation {
+    newAngajat(input: NewAngajat!)
   }
 `
 

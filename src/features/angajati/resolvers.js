@@ -7,6 +7,7 @@ const angajatResolver = {
       return data
     }
   }
+  //Mutation: {newAngajat}
 }
 
 module.exports = angajatResolver
