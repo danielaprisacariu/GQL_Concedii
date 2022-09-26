@@ -21,7 +21,7 @@ const angajatDefs = gql`
   }
 
   input NewAngajat {
-    id: Int!
+    #id: Int!
     nume: String!
     prenume: String!
     email: String!
@@ -32,7 +32,7 @@ const angajatDefs = gql`
     serie: String!
     no: String!
     nrTelefon: String
-    poza: [Byte]
+    #poza: [Byte]
     esteAdmin: Boolean
     Manager: NewAngajat
     departament: Dep
@@ -60,13 +60,17 @@ const angajatDefs = gql`
     denumire: String
   }
 
+  type AsyncResult {
+    result1: Void
+  }
+
   extend type Query {
     angajat(id: Int): Angajat!
     angajati: [Angajat]!
   }
 
   extend type Mutation {
-    newAngajat(input: NewAngajat!): Angajat!
+    newAngajat(input: NewAngajat!): AsyncResult
   }
 `
 
