@@ -62,6 +62,7 @@ const angajatDefs = gql`
 
   extend type Query {
     angajat(id: Int): Angajat!
+    angajati: [Angajat]!
   }
 
   extend type Mutation {
