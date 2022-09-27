@@ -5,17 +5,20 @@ const ToateConResolvers = {
   Query: {
     toateConcediileDATA: async (_, __, { dataSources }, _info) => {
       const data = await dataSources.ToateConAPI.toateConcediileDATA()
-      const dataMapata = [
-        {
-          tipConcediuNume: data[0].tipConcediu.nume,
-          stareConcediu: data[0].stareConcediu.nume,
-          angajatNume: data[0].angajat.nume,
-          angajatPrenume: data[0].angajat.prenume,
-          dataInceput: data[0].dataInceput,
-          dataSfarsit: data[0].dataSfarsit,
-          inlocuitorNume: concat(data[0].inlocuitor.nume, ' ', data[0].inlocuitor.prenume)
-        }
-      ]
+      const dataMapata = []
+
+      for (var i = 0; i < data.length; i++) {
+        dataMapata.push({
+          id: data[i].id,
+          tipConcediuNume: data[i].tipConcediu.nume,
+          stareConcediu: data[i].stareConcediu.nume,
+          angajatNume: data[i].angajat.nume,
+          angajatPrenume: data[i].angajat.prenume,
+          dataInceput: data[i].dataInceput,
+          dataSfarsit: data[i].dataSfarsit,
+          inlocuitorNume: data[i].inlocuitor.nume + ' ' + data[i].inlocuitor.prenume
+        })
+      }
       return dataMapata
     }
   }
