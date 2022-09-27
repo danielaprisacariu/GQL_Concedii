@@ -9,7 +9,7 @@ const concediiResolvers = {
         concedii.push({
           id: data[i].id,
           dataInceput: data[i].dataInceput,
-          dataSfarsit: data[i].dataInceput,
+          dataSfarsit: data[i].dataSfarsit,
           comentarii: data[i].comentarii,
           tipConcediuNume: data[i].tipConcediu.nume,
           stareConcediuNume: data[i].stareConcediu.nume,
