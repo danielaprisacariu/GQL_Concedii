@@ -17,12 +17,22 @@ const angajatDefs = require('../features/angajati/schema')
 const concediuDefs = require('../features/concedii/schema')
 const concediuResolvers = require('../features/concedii/resolvers')
 
+const tipConcediuDefs = require('../features/tipConcedii/schema')
+const tipConcediuResolvers = require('../features/tipConcedii/resolvers')
+
 const oldTypeDefs = []
 const sources = loadTypedefsSync(join(__dirname, '../**/*.graphql'), {
   loaders: [new GraphQLFileLoader()]
 })
 
-const resolvers = merge(concediiResolvers, ToateConResolvers, userResolvers, angajatResolvers, concediuResolvers)
+const resolvers = merge(
+  concediiResolvers,
+  ToateConResolvers,
+  userResolvers,
+  angajatResolvers,
+  concediuResolvers,
+  tipConcediuResolvers
+)
 
 const typeDefs = [
   ...sources.map(source => source.document),
@@ -31,7 +41,8 @@ const typeDefs = [
   userDefs,
   angajatDefs,
   concediiDefs,
-  concediuDefs
+  concediuDefs,
+  tipConcediuDefs
 ]
 
 module.exports = makeExecutableSchema({ typeDefs, resolvers })
