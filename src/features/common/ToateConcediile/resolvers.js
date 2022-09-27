@@ -6,7 +6,6 @@ const ToateConResolvers = {
     toateConcediileDATA: async (_, __, { dataSources }, _info) => {
       const data = await dataSources.ToateConAPI.toateConcediileDATA()
       const dataMapata = []
-
       for (var i = 0; i < data.length; i++) {
         dataMapata.push({
           id: data[i].id,

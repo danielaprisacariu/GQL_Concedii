@@ -13,7 +13,7 @@ module.exports.getDataSources = () => ({
   concediiApi: new concediiApi(),
   ToateConAPI: new ToateConAPI(),
   angajatApi: new AngajatApi(),
-  concediuApi: new ConcediuApi()
+  concediuApi: new concediuApi()
 })
 
 module.exports.initializedDataSources = (context, dbInstance, dataSources) => {
