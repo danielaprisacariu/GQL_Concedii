@@ -1,7 +1,7 @@
 const { gql } = require('apollo-server-koa')
 
 const concediuDefs = gql`
-  input concediuNou {
+  input ConcediuNou {
     tipConcediuId: Int!
     dataInceput: DateTime!
     dataSfarsit: DateTime!
@@ -12,12 +12,12 @@ const concediuDefs = gql`
     zileConcediu: Int
   }
 
-  type AsyncResult {
+  type AsyncResultType {
     result1: Void
   }
 
   extend type Mutation {
-    inserareConcediu(input: concediuNou!): AsyncResult
+    inserareConcediu(input: ConcediuNou!): Void
   }
 `
 

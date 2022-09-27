@@ -5,7 +5,7 @@ class ConcediuApi extends ApiRESTDataSource {
     super()
   }
 
-  async concediuNou(input) {
+  async inserareConcediu(input) {
     const data = await this.put(`Concediu/InserareConcediu`, { ...input }, this.option)
     return data
   }
