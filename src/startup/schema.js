@@ -11,9 +11,11 @@ const ToateConResolvers = require('../features/common/ToateConcediile/resolvers'
 const ToateConcediileDefs = require('../features/common/ToateConcediile/schema')
 const concediiResolvers = require('../features/common/concediileMele/resolvers')
 const concediiDefs = require('../features/common/concediileMele/schema')
+const newUserDefs=require('../features/common/newUser/schema')
 const angajatResolvers = require('../features/angajati/resolvers')
 const angajatDefs = require('../features/angajati/schema')
-const newUserDefs = require('../features/common/newUser/schema')
+const AdministrareAngajatiDefs = require('../features/common/AdministrareAngajati/schema')
+const AdministrareAngajatiResolvers = require('../features/common/AdministrareAngajati/resolvers')
 const concediuDefs = require('../features/concedii/schema')
 const concediuResolvers = require('../features/concedii/resolvers')
 const newUserResolver = require('../features/common/newUser/resolver')
@@ -26,13 +28,20 @@ const sources = loadTypedefsSync(join(__dirname, '../**/*.graphql'), {
 })
 
 const resolvers = merge(
+  
   concediiResolvers,
+ 
   ToateConResolvers,
+ 
   userResolvers,
+ 
   angajatResolvers,
+ 
   concediuResolvers,
   tipConcediuResolvers,
   newUserResolver
+,
+  AdministrareAngajatiResolvers
 )
 
 const typeDefs = [
@@ -44,7 +53,8 @@ const typeDefs = [
   concediiDefs,
   concediuDefs,
   tipConcediuDefs,
-  newUserDefs
+  newUserDefs,
+  AdministrareAngajatiDefs
 ]
 
 module.exports = makeExecutableSchema({ typeDefs, resolvers })
