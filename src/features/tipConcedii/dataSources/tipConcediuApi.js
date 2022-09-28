@@ -6,9 +6,9 @@ class TipConcediuApi extends ApiRESTDataSource {
   }
 
   async getAllConcedii() {
-    const data = await this.get(`TipConcediu/GetAllTipConcediu`)
+    const data1 = await this.get(`TipConcediu/GetAllTipConcediu`)
 
-    return data
+    return data1
   }
 }
 
