@@ -7,15 +7,43 @@ const { join } = require('path')
 
 const userResolvers = require('../features/user/resolvers')
 const userDefs = require('../features/user/schema')
+const ToateConResolvers = require('../features/common/ToateConcediile/resolvers')
+const ToateConcediileDefs = require('../features/common/ToateConcediile/schema')
+const concediiResolvers = require('../features/common/concediileMele/resolvers')
+const concediiDefs = require('../features/common/concediileMele/schema')
+const angajatResolvers = require('../features/angajati/resolvers')
+const angajatDefs = require('../features/angajati/schema')
+
+const concediuDefs = require('../features/concedii/schema')
+const concediuResolvers = require('../features/concedii/resolvers')
+
+const tipConcediuDefs = require('../features/tipConcedii/schema')
+const tipConcediuResolvers = require('../features/tipConcedii/resolvers')
 
 const oldTypeDefs = []
 const sources = loadTypedefsSync(join(__dirname, '../**/*.graphql'), {
   loaders: [new GraphQLFileLoader()]
 })
 
-const resolvers = merge(userResolvers)
+const resolvers = merge(
+  concediiResolvers,
+  ToateConResolvers,
+  userResolvers,
+  angajatResolvers,
+  concediuResolvers,
+  tipConcediuResolvers
+)
 
-const typeDefs = [...sources.map(source => source.document), ...oldTypeDefs, userDefs]
+const typeDefs = [
+  ...sources.map(source => source.document),
+  ...oldTypeDefs,
+  ToateConcediileDefs,
+  userDefs,
+  angajatDefs,
+  concediiDefs,
+  concediuDefs,
+  tipConcediuDefs
+]
 
 module.exports = makeExecutableSchema({ typeDefs, resolvers })
 module.exports.tests = { typeDefs, resolvers }
