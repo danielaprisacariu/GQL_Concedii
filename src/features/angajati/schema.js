@@ -20,6 +20,12 @@ const angajatDefs = gql`
     concediat: Boolean
   }
 
+  type AngajatNumeConcatenat {
+    id: Int!
+    nume: String!
+    managerId: Int
+  }
+
   input NewAngajat {
     #id: Int!
     nume: String!
@@ -53,6 +59,7 @@ const angajatDefs = gql`
   extend type Query {
     angajat(id: Int): Angajat!
     angajati: [Angajat]!
+    angajatiNumeConcatenat(id: Int, idM: Int): [AngajatNumeConcatenat]!
   }
 
   extend type Mutation {

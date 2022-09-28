@@ -21,6 +21,11 @@ class AngajatApi extends ApiRESTDataSource {
 
     return data
   }
+
+  async getAllAngajatNumeConcatenat(id, idM) {
+    const data = await this.get(`Angajat/GetAllInlocuitoriNumeConcatenat?angajatId=${id}&managerId=${idM}`)
+    return data
+  }
 }
 
 module.exports = AngajatApi
