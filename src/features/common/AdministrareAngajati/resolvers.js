@@ -50,13 +50,13 @@ const AdministrareAngajatiResolvers = {
   Mutation: {
     modificareEchipa: async (_, { input }, { dataSources }) => {
       return dataSources.angajatiApi.modificareEchipa(input)
+    },
+    schimbareDepartament: async (_, { input }, { dataSources }) => {
+      return dataSources.angajatiApi.schimbareDepartament(input)
+    },
+    schimbareFunctie: async (_, { input }, { dataSources }) => {
+      return dataSources.angajatiApi.schimbareFunctie(input)
     }
-    /*  schimbareDepartament: async (_, { input }, { dataSources }) => {
-       return dataSources.angajatiApi.schimbareDepartament(input)
-     },
-     schimbareFunctie: async (_, { input }, { dataSources }) => {
-        return dataSources.angajatiApi.schimbareFunctie(input)
-      }, */
   }
 }
 module.exports = AdministrareAngajatiResolvers

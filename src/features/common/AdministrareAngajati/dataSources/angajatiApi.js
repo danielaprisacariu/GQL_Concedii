@@ -12,23 +12,26 @@ class angajatiApi extends ApiRESTDataSource {
   async modificareEchipa(input) {
     const data = await this.post(
       `Angajat/PostTransfer?AngajatId=${input.angajatEN}&managerId=${input.managerEN}`,
+      { input },
       this.option
     )
     return data
   }
-  /*async schimbareDepartament(input) {
+  async schimbareDepartament(input) {
     const data = await this.post(
-      `{0}DepartamentSiFunctie/PostDepartament?AngajatId=${input.angajatDep}&DepartamentID=${input.departament}`,
+      `DepartamentSiFunctie/PostDepartament?AngajatId=${input.angajatDep}&DepartamentID=${input.departament}`,
+      {},
       this.option
     )
     return data
   }
   async schimbareFunctie(input) {
     const data = await this.post(
-      `{0}DepartamentSiFunctie/PostFunctie?AngajatId=${input.angajatFunc}&functieID=${input.functie}`,
+      `DepartamentSiFunctie/PostFunctie?AngajatId=${input.angajatFunc}&functieID=${input.functie}`,
+      { input },
       this.option
     )
     return data
-  }*/
+  }
 }
 module.exports = angajatiApi
