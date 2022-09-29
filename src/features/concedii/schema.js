@@ -19,6 +19,16 @@ const concediuDefs = gql`
   extend type Mutation {
     inserareConcediu(input: ConcediuNou!): Void
   }
+
+  extend type Query {
+    zileRamase(id: Int, tipConcediuId: Int): Int!
+  }
+  extend type Query {
+    AllIstoricConcediiVerificare(id: Int): Int!
+  }
+  extend type Query {
+    ConcediiInlocuitori(id: Int): Int!
+  }
 `
 
 module.exports = concediuDefs

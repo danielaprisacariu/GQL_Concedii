@@ -16,10 +16,15 @@ const angajatDefs = require('../features/angajati/schema')
 const newUserDefs = require('../features/common/newUser/schema')
 const concediuDefs = require('../features/concedii/schema')
 const concediuResolvers = require('../features/concedii/resolvers')
+const administrareDefs = require('../features/common/AdministrareAngajati/schema')
 const newUserResolver = require('../features/common/newUser/resolver')
 const tipConcediuDefs = require('../features/tipConcedii/schema')
 const tipConcediuResolvers = require('../features/tipConcedii/resolvers')
-
+const departamentDefs = require('../features/departament/schema')
+const departamentResolvers = require('../features/departament/resolvers')
+const functieDefs = require('../features/functie/schema')
+const functieResolvers = require('../features/functie/resolvers')
+const AdministrareAngajatiResolvers = require('../features/common/AdministrareAngajati/resolvers')
 const oldTypeDefs = []
 const sources = loadTypedefsSync(join(__dirname, '../**/*.graphql'), {
   loaders: [new GraphQLFileLoader()]
@@ -27,11 +32,14 @@ const sources = loadTypedefsSync(join(__dirname, '../**/*.graphql'), {
 
 const resolvers = merge(
   concediiResolvers,
+  AdministrareAngajatiResolvers,
   ToateConResolvers,
   userResolvers,
   angajatResolvers,
   concediuResolvers,
   tipConcediuResolvers,
+  departamentResolvers,
+  functieResolvers,
   newUserResolver
 )
 
@@ -41,9 +49,12 @@ const typeDefs = [
   ToateConcediileDefs,
   userDefs,
   angajatDefs,
+  administrareDefs,
   concediiDefs,
   concediuDefs,
   tipConcediuDefs,
+  departamentDefs,
+  functieDefs,
   newUserDefs
 ]
 
