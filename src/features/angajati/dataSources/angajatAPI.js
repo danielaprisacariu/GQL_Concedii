@@ -15,6 +15,10 @@ class AngajatApi extends ApiRESTDataSource {
     const data = await this.put(`Orice/PutNewAngajat`, { ...input }, this.option)
     return data
   }
+  async updateAngajat(input) {
+    const data = await this.put(`Angajat/UpdateDateleMele`, { ...input }, this.option)
+    return data
+  }
 
   async getAllAngajat() {
     const data = await this.get(`Angajat/GetAllAngajati`)

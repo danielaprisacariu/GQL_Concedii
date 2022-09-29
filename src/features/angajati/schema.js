@@ -27,23 +27,52 @@ const angajatDefs = gql`
   }
 
   input NewAngajat {
-    #id: Int!
+    id: Int
     nume: String!
     prenume: String!
     email: String!
-    parola: String!
+    parola: String
     dataAngajare: DateTime!
     dataNasterii: DateTime!
     cnp: String!
     serie: String!
     no: String!
     nrTelefon: String
-    #poza: [Byte]
+    poza: String
     esteAdmin: Boolean
     managerId: Int
     departamentId: Int
     functieId: Int
     concediat: Boolean
+  }
+
+  input UpdateAngajat {
+    id: Int!
+    nume: String!
+    prenume: String!
+    email: String!
+    parola: String
+    dataAngajare: DateTime!
+    dataNasterii: DateTime!
+    cnp: String!
+    serie: String!
+    no: String!
+    nrTelefon: String
+    poza: String
+    esteAdmin: Boolean
+    departament: DepartamentI
+    functie: FunctieI
+    concediat: Boolean
+  }
+
+  input DepartamentI {
+    id: Int
+    denumire: String
+  }
+
+  input FunctieI {
+    id: Int
+    denumire: String
   }
 
   type Departament {
@@ -64,6 +93,7 @@ const angajatDefs = gql`
 
   extend type Mutation {
     newAngajat(input: NewAngajat!): Void
+    updateAngajat(input: UpdateAngajat!): Void
   }
 `
 

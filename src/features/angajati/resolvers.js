@@ -18,7 +18,18 @@ const angajatResolver = {
   },
   Mutation: {
     newAngajat: async (_, { input }, { dataSources }) => {
-      return dataSources.angajatApi.newAngajat(input)
+      dataSources.angajatApi.newAngajat(input)
+
+      // if (input.id !== null) {
+      //   dataSources.angajatApi.updateAngajat(input)
+      // } else {
+      //   dataSources.angajatApi.newAngajat(input)
+      // }
+      return true
+    },
+    updateAngajat: async (_, { input }, { dataSources }) => {
+      dataSources.angajatApi.updateAngajat(input)
+      return true
     }
   }
 }
