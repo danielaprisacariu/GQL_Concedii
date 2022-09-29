@@ -3,12 +3,15 @@ const ToateConAPI = require('../features/common/ToateConcediile/dataSources/Toat
 const UserApi = require('../features/user/dataSources/userApi')
 const UserDb = require('../features/user/dataSources/userDb')
 const AngajatApi = require('../features/angajati/dataSources/angajatAPI')
+const angajatiApi = require('../features/common/AdministrareAngajati/dataSources/angajatiApi')
+const departamenteApi = require('../features/common/AdministrareAngajati/dataSources/departamenteApi')
+const functiiApi = require('../features/common/AdministrareAngajati/dataSources/functiiApi')
+const manageriApi = require('../features/common/AdministrareAngajati/dataSources/manageriApi')
 const ConcediuApi = require('../features/concedii/dataSources/concediuApi')
 const TipConcediuApi = require('../features/tipConcedii/dataSources/tipConcediuApi')
 const departamentApi = require('../features/departament/dataSources/departamentApi')
 const functieApi = require('../features/functie/dataSources/functieApi')
-const newUserAPI = require('../features/common/newUser/dataSources/newUserAPI')
-
+const newUserApi = require('../features/common/newUser/dataSources/newUserAPI')
 module.exports.getDataSources = () => ({
   // Instantiate your data sources here. e.g.: userApi: new UserApi()
   userApi: new UserApi(),
@@ -18,9 +21,15 @@ module.exports.getDataSources = () => ({
   angajatApi: new AngajatApi(),
   concediuApi: new ConcediuApi(),
   tipConcediuApi: new TipConcediuApi(),
+
   departamentApi: new departamentApi(),
   functieApi: new functieApi(),
-  newUserAPI: new newUserAPI()
+
+  newUserAPI: new newUserApi(),
+  angajatiApi: new angajatiApi(),
+  departamenteApi: new departamenteApi(),
+  functiiApi: new functiiApi(),
+  manageriApi: new manageriApi()
 })
 
 module.exports.initializedDataSources = (context, dbInstance, dataSources) => {
@@ -35,5 +44,9 @@ module.exports.initializedDataSources = (context, dbInstance, dataSources) => {
   dataSources.departamentApi.initialize({ context })
   dataSources.functieApi.initialize({ context })
   dataSources.newUserAPI.initialize({ context })
+  dataSources.angajatiApi.initialize({ context })
+  dataSources.manageriApi.initialize({ context })
+  dataSources.departamenteApi.initialize({ context })
+  dataSources.functiiApi.initialize({ context })
   return dataSources
 }
