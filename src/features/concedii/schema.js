@@ -12,10 +12,10 @@ const concediuDefs = gql`
     zileConcediu: Int
   }
 
-  input UpdateConcediu {[
+  input UpdateConcediu {
     id: Int!
     stareConcediuId: Int!
-  ]}
+  }
 
   type AsyncResultType {
     result1: Void
