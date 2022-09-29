@@ -19,6 +19,10 @@ const concediuResolvers = require('../features/concedii/resolvers')
 const newUserResolver = require('../features/common/newUser/resolver')
 const tipConcediuDefs = require('../features/tipConcedii/schema')
 const tipConcediuResolvers = require('../features/tipConcedii/resolvers')
+const departamentDefs = require('../features/departament/schema')
+const departamentResolvers = require('../features/departament/resolvers')
+const functieDefs = require('../features/functie/schema')
+const functieResolvers = require('../features/functie/resolvers')
 
 const oldTypeDefs = []
 const sources = loadTypedefsSync(join(__dirname, '../**/*.graphql'), {
@@ -32,6 +36,8 @@ const resolvers = merge(
   angajatResolvers,
   concediuResolvers,
   tipConcediuResolvers,
+  departamentResolvers,
+  functieResolvers,
   newUserResolver
 )
 
@@ -44,6 +50,8 @@ const typeDefs = [
   concediiDefs,
   concediuDefs,
   tipConcediuDefs,
+  departamentDefs,
+  functieDefs,
   newUserDefs
 ]
 
