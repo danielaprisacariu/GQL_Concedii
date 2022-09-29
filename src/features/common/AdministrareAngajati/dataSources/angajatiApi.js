@@ -16,7 +16,7 @@ class angajatiApi extends ApiRESTDataSource {
     )
     return data
   }
-  async schimbareDepartament(input) {
+  /*async schimbareDepartament(input) {
     const data = await this.post(
       `{0}DepartamentSiFunctie/PostDepartament?AngajatId=${input.angajatDep}&DepartamentID=${input.departament}`,
       this.option
@@ -29,6 +29,6 @@ class angajatiApi extends ApiRESTDataSource {
       this.option
     )
     return data
-  }
+  }*/
 }
 module.exports = angajatiApi
