@@ -7,7 +7,9 @@ const angajatiApi = require('../features/common/AdministrareAngajati/dataSources
 const departamenteApi = require('../features/common/AdministrareAngajati/dataSources/departamenteApi')
 const functiiApi = require('../features/common/AdministrareAngajati/dataSources/functiiApi')
 const manageriApi = require('../features/common/AdministrareAngajati/dataSources/manageriApi')
-
+const ConcediuApi = require('../features/concedii/dataSources/concediuApi')
+const TipConcediuApi = require('../features/tipConcedii/dataSources/tipConcediuApi')
+const newUserApi = require('../features/common/newUser/dataSources/newUserAPI')
 module.exports.getDataSources = () => ({
   // Instantiate your data sources here. e.g.: userApi: new UserApi()
   userApi: new UserApi(),
@@ -17,7 +19,7 @@ module.exports.getDataSources = () => ({
   angajatApi: new AngajatApi(),
   concediuApi: new ConcediuApi(),
   tipConcediuApi: new TipConcediuApi(),
-  newUserAPI: new newUserAPI(),
+  newUserAPI: new newUserApi(),
   angajatiApi: new angajatiApi(),
   departamenteApi: new departamenteApi(),
   functiiApi: new functiiApi(),
